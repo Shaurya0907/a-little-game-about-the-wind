@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bi6uyll2hi0of"]
+
+[ext_resource type="FontFile" uid="uid://diyru53qs3k5" path="res://assets/Minecraft.ttf" id="1_dc135"]
+[ext_resource type="Script" uid="uid://bgveqfkm526c3" path="res://scripts/retry.gd" id="1_dxm6b"]
+
+[node name="retry" type="Control" unique_id=1009635495]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dxm6b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=879993757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="." unique_id=1532257981]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 62.0
+offset_right = 264.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("1_dc135")
+text = "Retry?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yes" type="Button" parent="." unique_id=1118453204]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 92.0
+offset_right = 151.0
+offset_bottom = 123.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_dc135")
+text = "Yes"
+
+[node name="no" type="Button" parent="." unique_id=801441023]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 92.0
+offset_right = 200.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("1_dc135")
+text = "No"
+
+[connection signal="pressed" from="yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="no" to="." method="_on_no_pressed"]

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://ba6cljkg5wx5q"]
+
+[ext_resource type="Script" uid="uid://donppxlh7co4j" path="res://scripts/intro.gd" id="1_4bx60"]
+[ext_resource type="Texture2D" uid="uid://ci1l5qoji1di" path="res://assets/intro/intro.jpg" id="1_yjqpq"]
+[ext_resource type="FontFile" uid="uid://diyru53qs3k5" path="res://assets/Minecraft.ttf" id="2_4bx60"]
+
+[node name="intro" type="Node2D" unique_id=808727084]
+script = ExtResource("1_4bx60")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771716144]
+scale = Vector2(1.765, 1.765)
+texture = ExtResource("1_yjqpq")
+centered = false
+
+[node name="Label1" type="Label" parent="." unique_id=2002612792]
+visible = false
+offset_left = 81.0
+offset_top = 76.0
+offset_right = 247.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("2_4bx60")
+text = "I need to reach home"
+
+[node name="Label2" type="Label" parent="." unique_id=1301699718]
+visible = false
+offset_left = 80.0
+offset_top = 46.0
+offset_right = 246.0
+offset_bottom = 138.0
+theme_override_fonts/font = ExtResource("2_4bx60")
+text = "How to play:
+
+Move: WASD
+Jump: Space
+Parry: Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=946178270]
+visible = false
+offset_left = 58.0
+offset_top = 73.0
+offset_right = 268.0
+offset_bottom = 108.0
+theme_override_fonts/font = ExtResource("2_4bx60")
+text = "The wind will stop you from
+moving ahead"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=1787162572]
+visible = false
+offset_left = 58.0
+offset_top = 68.0
+offset_right = 264.0
+offset_bottom = 122.0
+theme_override_fonts/font = ExtResource("2_4bx60")
+text = "USE PARRY THE MOMENT
+YOU START FALLING
+DO NOT BLAME ME"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=1728833839]
+visible = false
+offset_left = 81.0
+offset_top = 76.0
+offset_right = 247.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("2_4bx60")
+text = "Timing Matters"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="." unique_id=913660714]
+visible = false
+offset_left = 81.0
+offset_top = 76.0
+offset_right = 247.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("2_4bx60")
+text = "Good Luck !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="delay" type="Timer" parent="." unique_id=456591378]
+wait_time = 3.0
+
+[connection signal="timeout" from="delay" to="." method="_on_delay_timeout"]

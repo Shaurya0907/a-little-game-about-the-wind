@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dd64rh3xsfgh0"]
 
 [ext_resource type="Texture2D" uid="uid://dxojsglsyvxtw" path="res://assets/environment/sky.png" id="1_mi8v4"]
+[ext_resource type="Script" uid="uid://dcekvfihxdy4v" path="res://scripts/ground.gd" id="1_w5yvf"]
 [ext_resource type="Texture2D" uid="uid://r6ierixxkil" path="res://assets/environment/ground.png" id="2_lmksl"]
 [ext_resource type="Texture2D" uid="uid://bgsmxq0qgqm7o" path="res://assets/environment/bg.png" id="2_w5yvf"]
 
@@ -13,7 +14,11 @@ size = Vector2(20, 179)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7gvf"]
 size = Vector2(21, 180)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asjhf"]
+size = Vector2(19, 18)
+
 [node name="ground" type="StaticBody2D" unique_id=2070611562]
+script = ExtResource("1_w5yvf")
 
 [node name="scene" type="ParallaxBackground" parent="." unique_id=346324029]
 offset = Vector2(-20, 0)
@@ -57,3 +62,13 @@ shape = SubResource("RectangleShape2D_rm1bd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_barrier" unique_id=2129005598]
 position = Vector2(1910.5, 90)
 shape = SubResource("RectangleShape2D_h7gvf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=503132410]
+position = Vector2(1845, 135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=462016077]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_asjhf")
+debug_color = Color(0, 0.641495, 0.33837405, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

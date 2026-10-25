@@ -12,13 +12,14 @@ extends CharacterBody2D
 @onready var wind_gust: AudioStreamPlayer2D = $"../wind_gust"
 
 
-
 '''
 NOTE:
 I have made the wind code with the help of Ai. Yes, i had to as i was VERY short of time due to my heavy prior commitments and exams.
 I only have about 4 to 5 hours approx to complete the game.
 everything else is purely made by me including the art and everything else and rest of the game WILL be made by me. I didnt want to use AI. If i wont be able to submit the game on time, now you know the real reason.
 I again appologize for the AI usage (I dont know how much is permitted but for me it should be nil)
+
+EDIT: yayy i have completed my game and I did NOT use any Ai for the rest of the game, everything is achieved by hit and trial ;)))
 '''
 const SPEED = 70.0
 const GRAVITY = 1200.0
@@ -221,8 +222,7 @@ func _physics_process(delta: float) -> void:
 		wind_catch = false
 	
 	if not heart_1.visible:
-		get_tree().quit()
-		pass
+		get_tree().change_scene_to_file("res://scenes/retry.tscn")
 	
 	if on_floor_after_move and not was_on_floor:
 

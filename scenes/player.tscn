@@ -57,7 +57,7 @@ script = ExtResource("1_qlg0r")
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_v15d6")
-animation = &"jump"
+animation = &"idle"
 metadata/_dot_aseprite_importer_player = NodePath("AnimationPlayer")
 metadata/_dot_aseprite_importer_sync_key = "d720d82cbe651e55fa30245249d2203a"
 

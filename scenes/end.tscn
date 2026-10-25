@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://2buttpbqfgye"]
+
+[ext_resource type="Script" uid="uid://bgr5uk2xlx8f7" path="res://scripts/end.gd" id="1_bvfni"]
+[ext_resource type="Texture2D" uid="uid://bbcc1i6dmsg3l" path="res://assets/end/end.png" id="1_mwn6m"]
+[ext_resource type="FontFile" uid="uid://diyru53qs3k5" path="res://assets/Minecraft.ttf" id="2_3d26k"]
+[ext_resource type="Texture2D" uid="uid://ci1l5qoji1di" path="res://assets/intro/intro.jpg" id="3_s4tl2"]
+
+[node name="room" type="Control" unique_id=1422530567]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bvfni")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1424406063]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_mwn6m")
+centered = false
+
+[node name="cover" type="Sprite2D" parent="." unique_id=1735893405]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(62, 17)
+texture = ExtResource("3_s4tl2")
+centered = false
+
+[node name="yes" type="Button" parent="." unique_id=1121328220]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 92.0
+offset_right = 151.0
+offset_bottom = 123.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_3d26k")
+text = "Yes"
+
+[node name="yes2" type="Button" parent="." unique_id=1497923859]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 92.0
+offset_right = 151.0
+offset_bottom = 123.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_3d26k")
+text = "Yes"
+
+[node name="no" type="Button" parent="." unique_id=1500905981]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 92.0
+offset_right = 200.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("2_3d26k")
+text = "No"
+
+[node name="Label" type="Label" parent="." unique_id=325580744]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 69.0
+offset_right = 241.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("2_3d26k")
+theme_override_font_sizes/font_size = 23
+text = "Are you SuRe!?"
+
+[connection signal="pressed" from="yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="yes2" to="." method="_on_yes_2_pressed"]
+[connection signal="pressed" from="no" to="." method="_on_no_pressed"]

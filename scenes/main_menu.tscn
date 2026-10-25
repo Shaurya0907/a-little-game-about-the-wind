@@ -1,16 +1,76 @@
 [gd_scene format=3 uid="uid://bbmrd8t68ks2b"]
 
-[node name="main_menu" type="Control" unique_id=877334869]
+[ext_resource type="Script" uid="uid://d4l6r0160owp7" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Texture2D" uid="uid://cbymue5ehqjtu" path="res://assets/menu/play.png" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://drv5fyj4b1s8d" path="res://assets/menu/menu_cover.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://hufoi1i6y2h2" path="res://assets/menu/options.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://doslc0rifjkcf" path="res://assets/menu/quit.png" id="4_wu84c"]
+[ext_resource type="AudioStream" uid="uid://bjuknomyhk5pa" path="res://sfx/menu_bg.wav" id="6_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://cugya66m6nrox" path="res://scenes/fade.tscn" id="7_oa1go"]
+
+[node name="main_menu" type="Node2D" unique_id=1939550184]
+script = ExtResource("1_8ln24")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=514225581]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("2_bqqt6")
+centered = false
+
+[node name="Control" type="Control" parent="." unique_id=740505799]
 layout_mode = 3
 anchors_preset = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=497433691]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer" unique_id=142057733]
-layout_mode = 2
+[node name="play" type="TextureButton" parent="Control" unique_id=142057733]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 135.0
+offset_top = 78.0
+offset_right = 237.0
+offset_bottom = 109.0
+scale = Vector2(0.7, 0.7)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_ekxnf")
 
-[node name="TextureButton2" type="TextureButton" parent="VBoxContainer" unique_id=1741356860]
-layout_mode = 2
+[node name="options" type="TextureButton" parent="Control" unique_id=1741356860]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 119.99999
+offset_top = 103.0
+offset_right = 222.0
+offset_bottom = 134.0
+scale = Vector2(0.7, 0.7)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_bqqt6")
+
+[node name="quit" type="TextureButton" parent="Control" unique_id=751437548]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 135.0
+offset_top = 104.00001
+offset_right = 237.0
+offset_bottom = 135.0
+scale = Vector2(0.7, 0.7)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_wu84c")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1201213161]
+stream = ExtResource("6_rtw2f")
+autoplay = true
+
+[node name="fade" parent="." unique_id=386116744 instance=ExtResource("7_oa1go")]
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="fade_timer" type="Timer" parent="fade" unique_id=229412787]
+
+[connection signal="pressed" from="Control/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Control/quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="fade/fade_timer" to="." method="_on_fade_timer_timeout"]
