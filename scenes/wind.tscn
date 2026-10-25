@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://8ajjfkjneb5b"]
+
+[ext_resource type="Texture2D" uid="uid://chv7dvhtmd8e3" path="res://assets/environment/wind/1.png" id="1_4pwos"]
+[ext_resource type="Texture2D" uid="uid://1hse3p473knn" path="res://assets/environment/wind/2.png" id="2_5ly3m"]
+[ext_resource type="Texture2D" uid="uid://keqxi3mhd24m" path="res://assets/environment/wind/3.png" id="3_sq2e8"]
+[ext_resource type="Texture2D" uid="uid://cn8ce30uo2m1t" path="res://assets/environment/wind/4.png" id="4_7a7jx"]
+[ext_resource type="AnimationLibrary" uid="uid://bgu2p8ayyphuw" path="res://scenes/main_animations.tres" id="5_y4rkh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v15d6"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("1_4pwos")
+}, {
+"duration": 0.7,
+"texture": ExtResource("2_5ly3m")
+}, {
+"duration": 0.7,
+"texture": ExtResource("3_sq2e8")
+}, {
+"duration": 0.7,
+"texture": ExtResource("4_7a7jx")
+}],
+"loop": 1,
+"name": &"wind",
+"speed": 5.0
+}]
+
+[node name="wind" type="AnimatedSprite2D" unique_id=152739225]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_v15d6")
+animation = &"wind"
+frame_progress = 0.49007776
+metadata/_dot_aseprite_importer_player = NodePath("AnimationPlayer")
+metadata/_dot_aseprite_importer_sync_key = "75762552eb90042c66d71531667ca866"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=764114297]
+libraries/ = ExtResource("5_y4rkh")

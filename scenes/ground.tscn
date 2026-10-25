@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dd64rh3xsfgh0"]
+
+[ext_resource type="Texture2D" uid="uid://dxojsglsyvxtw" path="res://assets/environment/sky.png" id="1_mi8v4"]
+[ext_resource type="Texture2D" uid="uid://r6ierixxkil" path="res://assets/environment/ground.png" id="2_lmksl"]
+[ext_resource type="Texture2D" uid="uid://bgsmxq0qgqm7o" path="res://assets/environment/bg.png" id="2_w5yvf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v15d6"]
+size = Vector2(1920, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm1bd"]
+size = Vector2(20, 179)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7gvf"]
+size = Vector2(21, 180)
+
+[node name="ground" type="StaticBody2D" unique_id=2070611562]
+
+[node name="scene" type="ParallaxBackground" parent="." unique_id=346324029]
+offset = Vector2(-20, 0)
+transform = Transform2D(1, 0, 0, 1, -20, 0)
+
+[node name="sky" type="Sprite2D" parent="scene" unique_id=1759927043]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_mi8v4")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="scene" unique_id=995784680]
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="bg" type="Sprite2D" parent="scene/ParallaxLayer2" unique_id=489070861]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("2_w5yvf")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="scene" unique_id=1424082081]
+
+[node name="ground" type="Sprite2D" parent="scene/ParallaxLayer" unique_id=526868205]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("2_lmksl")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2106080243]
+position = Vector2(940, 161.5)
+shape = SubResource("RectangleShape2D_v15d6")
+
+[node name="left_barrier" type="StaticBody2D" parent="." unique_id=12029363]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_barrier" unique_id=267922445]
+position = Vector2(-10, 90.5)
+shape = SubResource("RectangleShape2D_rm1bd")
+
+[node name="right_barrier" type="StaticBody2D" parent="." unique_id=994187435]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_barrier" unique_id=2129005598]
+position = Vector2(1910.5, 90)
+shape = SubResource("RectangleShape2D_h7gvf")

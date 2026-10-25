@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c07srfjf4syp"]
+
+[ext_resource type="Texture2D" uid="uid://dvatfhdcr8fpy" path="res://assets/player/health/heart.png" id="1_v30as"]
+
+[node name="heart" type="Sprite2D" unique_id=239393128]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_v30as")
